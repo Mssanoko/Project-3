@@ -8,11 +8,7 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
-<<<<<<< HEAD
-    const emailHandler = (event)=>{
-=======
     const emailHandler = (event) => {
->>>>>>> 203da68c7586da84c865a17ac130c1792d93ff1e
 
         console.log(event.target.value);
         setEmail(event.target.value)
