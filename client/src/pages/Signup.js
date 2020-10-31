@@ -1,19 +1,24 @@
 //need name email pw
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import API from "../utils/API";
 
 function Signup() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+<<<<<<< HEAD
     const emailHandler = (event)=>{
+=======
+    const emailHandler = (event) => {
+>>>>>>> 203da68c7586da84c865a17ac130c1792d93ff1e
 
         console.log(event.target.value);
         setEmail(event.target.value)
     }
-    const submitHandler = (event)=>{
-event.preventDefault();
+    const submitHandler = (event) => {
+        event.preventDefault();
         console.log("Form Submitted");
 
         const userData = {
@@ -21,8 +26,13 @@ event.preventDefault();
             password,
             name
         }
-        
-        // Axios.post("/api/signup", userData)
+        API.signUp(userData).then(results=>{
+            console.log(results);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
     }
 
 
@@ -36,10 +46,10 @@ event.preventDefault();
                 onChange={emailHandler}
                 placeholder="input email"
             />
-<input
-    type="submit"
+            <input
+                type="submit"
 
-/>
+            />
         </form>
     </div>)
 }
