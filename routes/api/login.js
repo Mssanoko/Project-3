@@ -16,19 +16,26 @@ const router = require("express").Router();
   // otherwise send back an error
   router.post("/signup", function(req, res) {
     console.log("working?");
+    console.log(req.body);
     db.User.create({
         name: req.body.name,
         email: req.body.email,
-      password: req.body.password
+        password: req.body.password
     })
       .then(function() {
-        res.redirect(307, "/login");
+        // res.redirect(307, "/login");
+        console.log("signed up");
+        res.status(200).json("hello");
       })
       .catch(function(err) {
+        console.log(err);
         res.status(401).json(err);
       });
   });
-
+  router.get("/login", function(req, res) {
+    console.log("logging in");
+    // res.redirect("/");
+  });
   // Route for logging user out
   router.get("/logout", function(req, res) {
     req.logout();
