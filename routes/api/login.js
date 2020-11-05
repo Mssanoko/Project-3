@@ -22,24 +22,22 @@ const router = require("express").Router();
         email: req.body.email,
         password: req.body.password
     })
-      .then(function() {
+      .then(function(data) {
         // res.redirect(307, "/login");
         console.log("signed up");
-        res.status(200).json("hello");
+        res.status(200).json(data);
       })
       .catch(function(err) {
         console.log(err);
         res.status(401).json(err);
       });
   });
-  router.get("/login", function(req, res) {
-    console.log("logging in");
-    // res.redirect("/");
-  });
+
   // Route for logging user out
   router.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    //res.redirect("/");
+    res.json(true);
   });
 
   // Route for getting some data about our user to be used client side
@@ -52,7 +50,7 @@ const router = require("express").Router();
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        _id: req.user._id
       });
     }
   });
