@@ -1,17 +1,28 @@
 import React from 'react';
 import './Card.css';
+import Nav from "../../components/Nav";
+import { Container, Row, Col } from "../../components/Grid";
 
 const Card = (props) => (
+    <Container fluid>
+    <Nav />
+    <Row>
+    <Col size="md-6">
     <div className="card-container">
         <div className="card">
             <div className="front">
-                <div className="eng">{props.eng}</div>
+                <div className="eng">English word</div>
             </div>
             <div className="front back">
-                <div className="fr">{props.fr}</div>
+                <div className="fr">French word</div>
             </div>
         </div>
-    </div>
+    </div>  
+    </Col>
+          </Row>
+          </Container>  
 )
+
+
 
 export default Card

@@ -6,6 +6,7 @@
     position: relative;
     margin: auto;
     transition: ease-in;
+    
   }
   
   .card {
@@ -37,6 +38,7 @@
     width: 400px;
     text-align: center;
     transform: rotateY(180deg);
+    
   }
   
   .eng{
