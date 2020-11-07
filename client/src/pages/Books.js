@@ -12,25 +12,19 @@ function Books() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [formObject, setFormObject] = useState({})
+  const [translations, setTranslations] = useState([]);
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    
   }, [])
 
-  // Loads all books and sets them to books
-  function loadBooks() {
-    API.getBooks()
-      .then(res => 
-        setBooks(res.data)
-      )
-      .catch(err => console.log(err));
-  };
+
 
   // Deletes a book from the database with a given id, then reloads books from the db
   function deleteBook(id) {
     API.deleteBook(id)
-      .then(res => loadBooks())
+      .then(res => console.log(res))
       .catch(err => console.log(err));
   }
 
@@ -45,11 +39,18 @@ function Books() {
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.phrase) {
-      API.saveBook({
+      API.translate({
         text: formObject.phrase,
        
       })
-        .then(res => loadBooks())
+        .then(res => { 
+          console.log(res)
+          console.log(res.data[0].translation[0].translation);
+          const biggerList = [...translations, res.data[0].translation[0].translation];
+
+          setTranslations(biggerList)
+
+        })
         .catch(err => console.log(err));
      }
   };
@@ -76,6 +77,16 @@ function Books() {
                 Translate Phrase
               </FormBtn>
             </form>
+          </Col>
+          <Col size="md-6 sm-12">
+            {translations.length ? (
+              <List>
+                {translations.map( (translation, index) => (
+                <ListItem key={"translate-"+index}>
+                  {translation}
+                </ListItem>))}
+              </List>
+            ): <span>No translations</span>}
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
