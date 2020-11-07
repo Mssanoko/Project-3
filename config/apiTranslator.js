@@ -7,7 +7,7 @@ console.log({apiKey, apiURL, version})
 
 const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const { IamAuthenticator } = require('ibm-watson/auth');
-const { countDocuments, model } = require('../models/book');
+const { countDocuments, model } = require('../models/Flashcard');
 
 const languageTranslator = new LanguageTranslatorV3({
     version: version,

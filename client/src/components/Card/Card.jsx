@@ -1,5 +1,10 @@
 import React from 'react';
 import './Card.css';
+import Quiz from '../Quiz/Quiz'
+
+const Card = (props) => (
+    <>
+
 import Nav from "../../components/Nav";
 import { Container, Row, Col } from "../../components/Grid";
 
@@ -8,6 +13,7 @@ const Card = (props) => (
     <Nav />
     <Row>
     <Col size="md-6">
+
     <div className="card-container">
         <div className="card">
             <div className="front">
@@ -17,6 +23,14 @@ const Card = (props) => (
                 <div className="fr">French word</div>
             </div>
         </div>
+
+    </div>
+    <Quiz/>
+    </>
+)
+
+export default Card;
+
     </div>  
     </Col>
           </Row>
@@ -26,3 +40,4 @@ const Card = (props) => (
 
 
 export default Card
+

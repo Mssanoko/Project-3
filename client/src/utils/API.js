@@ -2,8 +2,8 @@ import axios from "axios";
 // add login and signup route
 export default {
   // Gets all books
-  getBooks: function () {
-    return axios.get("/api/books");
+  getFlashcards: function () {
+    return axios.get("/api/flashcards");
   },
   // Gets the book with the given id
   getBook: function (id) {

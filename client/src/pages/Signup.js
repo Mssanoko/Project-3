@@ -55,7 +55,7 @@ function Signup() {
         }
         API.signUp(userData).then(results=>{
             console.log("signup successful");
-            History.push("/books");
+            History.push("/login");
         })
         .catch(err => {
             console.log(err);

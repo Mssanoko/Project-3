@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import Card  from "../components/Card/Card";
 import DrawButton from "../components/DrawButton/DrawButton";
+
+import Quiz from '../components/Quiz/Quiz'
+
 import Nav from "../components/Nav";
 import { Container, Row, Col } from "../components/Grid";
+
 
 class Cards extends Component {
     constructor(props){
@@ -58,12 +62,21 @@ componentWillMount(){
     
       render(){
         return (
+
+          <>
+          <div className="Card">
+            <div className="cardRow">
+              <Card eng={this.state.currentCard.eng}
+                fr={this.state.currentCard.fr}
+              />
+
           <Container fluid>
         <Nav />
         <Row>
         <Col size="md-6">
           <div className="Card">
             <div className="cardRow">
+
               
             </div>
             
@@ -71,9 +84,14 @@ componentWillMount(){
               <DrawButton drawCard={this.updateCard}/>
             </div>
           </div>
+
+          <Quiz/>
+          </>
+
           </Col>
           </Row>
           </Container>
+
         )
       }
     }
