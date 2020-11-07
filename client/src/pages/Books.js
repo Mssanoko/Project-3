@@ -56,11 +56,12 @@ function Books() {
 
     return (
       <Container fluid>
-        <Nav />
+        {/* <Nav /> */}
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Input anything you want in French?</h1>
+              <h1>Translate anything from English to French
+              </h1>
             </Jumbotron>
             <form>
               <Input
