@@ -2,8 +2,7 @@ import React from 'react';
 import './Card.css';
 import Quiz from '../Quiz/Quiz'
 
-const Card = (props) => (
-    <>
+  
 
 import Nav from "../../components/Nav";
 import { Container, Row, Col } from "../../components/Grid";
@@ -26,15 +25,12 @@ const Card = (props) => (
 
     </div>
     <Quiz/>
-    </>
-)
 
-export default Card;
-
-    </div>  
+    
     </Col>
           </Row>
           </Container>  
+       
 )
 
 
