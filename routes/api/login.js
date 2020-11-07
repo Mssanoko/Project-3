@@ -35,7 +35,7 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
         password: req.body.password
     })
       .then(function(data) {
-        // res.redirect(307, "/login");
+        res.redirect(307, "/login");
         console.log("signed up");
         res.status(200).json(data);
       })
@@ -48,7 +48,7 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
   // Route for logging user out
   router.get("/logout", function(req, res) {
     req.logout();
-    //res.redirect("/");
+    res.redirect("/");
     res.json(true);
   });
 

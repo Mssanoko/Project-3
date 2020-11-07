@@ -47,6 +47,7 @@ function LoginForm(props) {
                             <input ref={passwordInput} type="password" className="form-control" id={passwordId} />
                         </div>
                         <button type="submit" className="btn btn-primary">Login</button>
+                        <button type="submit" className="btn btn-primary">Logout</button>
                     </form>
                     );
                 }
