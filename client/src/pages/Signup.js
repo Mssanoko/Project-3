@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import SignUpForm from '../components/SignUpForm';
 import {Redirect} from 'react-router-dom';
 import UserContext from '../utils/UserContext';
+import Nav from "../components/Nav";
 
 function SignUp(props){
     const {loggedIn} = useContext(UserContext);
@@ -64,6 +65,7 @@ function Signup() {
 
 
     return (<div>
+        <Nav />
         <h1>Signup page</h1>
         <form id="test1" onSubmit={submitHandler}>
        Name

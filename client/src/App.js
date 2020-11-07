@@ -16,7 +16,7 @@ function App() {
     <Router>
       <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
       <div>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
           <Route exact path={"/books"}>
             <Books />

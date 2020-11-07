@@ -2,7 +2,7 @@ import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
 import LoginForm from "../LoginForm";
-import './style.scss';
+import './style.css';
 
 function Nav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
@@ -10,7 +10,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
-        React Reading List
+        English French Translation
       </a>
       { (() => {
         if(loggedIn){

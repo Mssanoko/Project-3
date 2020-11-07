@@ -15,7 +15,7 @@ router.post("/translate", (req, res) => {
         text: req.body.text,
         modelId: 'en-fr',
     };
-    const translations = [];
+    // const translations = [];
     languageTranslator.translate(translateParams)
         .then(translationResult => {
 
