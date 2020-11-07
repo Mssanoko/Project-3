@@ -8,9 +8,21 @@ const router = require("express").Router();
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  router.post("/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.user);
+  // router.post("/login", passport.authenticate("local"), function(req, res) {
+  //   res.json(req.user);
+  // });
+  // Using the passport.authenticate middleware with our local strategy.
+// If the user has valid login credentials, send them to the members page.
+// Otherwise the user will be sent an error
+// -> /api/user/login
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  // Sending back a password, even a hashed password, isn't a good idea
+  res.json({
+      email: req.user.email,
+      _id: req.user._id
   });
+});
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
