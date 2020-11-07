@@ -57,7 +57,7 @@ function Books() {
 
     return (
       <Container fluid>
-        {/* <Nav /> */}
+        <Nav />
         <Row>
           <Col size="md-6">
             <Jumbotron>

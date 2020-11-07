@@ -1,7 +1,7 @@
 import axios from "axios";
 // add login and signup route
 export default {
-  // Gets all books
+  // Gets all flashcards
   getFlashcards: function () {
     return axios.get("/api/flashcards");
   },
