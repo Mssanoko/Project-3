@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Card  from "../components/Card/Card";
 import DrawButton from "../components/DrawButton/DrawButton";
-
 import Quiz from '../components/Quiz/Quiz'
-
 import Nav from "../components/Nav";
 import { Container, Row, Col } from "../components/Grid";
 
@@ -63,7 +61,7 @@ componentWillMount(){
       render(){
         return (
 
-          <>
+       
           <div className="Card">
             <div className="cardRow">
               <Card eng={this.state.currentCard.eng}
@@ -86,14 +84,17 @@ componentWillMount(){
           </div>
 
           <Quiz/>
-          </>
+       
 
           </Col>
           </Row>
           </Container>
-
+          </div>
+          </div>
+        
         )
-      }
-    }
+      }}
+      
+    
 
     export default Card;
