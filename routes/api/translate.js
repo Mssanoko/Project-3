@@ -34,13 +34,13 @@ router.post("/translate", (req, res) => {
             //     modelId: 'en-pt',
             // }
             //res.json(translationResult.result.translations, null, 2);
-            // return languageTranslator.translate(translateParams);
-        })
-        .then(translationResult => {
-            translations.push({
-                params: translateParams,
-                translation: translationResult.result.translations
-            });
+            return languageTranslator.translate(translateParams);
+        // })
+        // .then(translationResult => {
+        //     translations.push({
+        //         params: translateParams,
+        //         translation: translationResult.result.translations
+        //     });
 
             res.json(translations);
         })
