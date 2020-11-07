@@ -44,15 +44,14 @@ function Books() {
   // Then reload books from the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    if (formObject.title && formObject.author) {
+    if (formObject.phrase) {
       API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
+        text: formObject.phrase,
+       
       })
         .then(res => loadBooks())
         .catch(err => console.log(err));
-    }
+     }
   };
 
     return (
@@ -61,35 +60,25 @@ function Books() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Books Should I Read?</h1>
+              <h1>Input anything you want in French?</h1>
             </Jumbotron>
             <form>
               <Input
                 onChange={handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                onChange={handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
+                name="phrase"
+                placeholder="Phrase(required)"
               />
               <FormBtn
-                disabled={!(formObject.author && formObject.title)}
+                disabled={!(formObject.phrase)}
                 onClick={handleFormSubmit}
               >
-                Submit Book
+                Translate Phrase
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Books On My List</h1>
+              <h1>My Flashcard list</h1>
             </Jumbotron>
             {books.length ? (
               <List>
@@ -97,7 +86,7 @@ function Books() {
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.phrase}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteBook(book._id)} />
@@ -105,7 +94,7 @@ function Books() {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>No Flashcards to Display</h3>
             )}
           </Col>
         </Row>
