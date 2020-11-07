@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Card  from "../components/Card/Card";
 import DrawButton from "../components/DrawButton/DrawButton";
+import Quiz from '../components/Quiz/Quiz'
 
 class Cards extends Component {
     constructor(props){
@@ -56,16 +57,20 @@ componentWillMount(){
     
       render(){
         return (
+          <>
           <div className="Card">
             <div className="cardRow">
               <Card eng={this.state.currentCard.eng}
                 fr={this.state.currentCard.fr}
               />
+              
             </div>
             <div className="buttonRow">
               <DrawButton drawCard={this.updateCard}/>
             </div>
           </div>
+          <Quiz/>
+          </>
         )
       }
     }

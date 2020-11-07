@@ -1,7 +1,9 @@
 import React from 'react';
 import './Card.css';
+import Quiz from '../Quiz/Quiz'
 
 const Card = (props) => (
+    <>
     <div className="card-container">
         <div className="card">
             <div className="front">
@@ -12,6 +14,8 @@ const Card = (props) => (
             </div>
         </div>
     </div>
+    <Quiz/>
+    </>
 )
 
-export default Card
+export default Card;
