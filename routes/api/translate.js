@@ -15,7 +15,7 @@ router.post("/translate", (req, res) => {
         text: req.body.text,
         modelId: 'en-fr',
     };
-    // const translations = [];
+    const translations = [];
     languageTranslator.translate(translateParams)
         .then(translationResult => {
 
@@ -27,6 +27,7 @@ router.post("/translate", (req, res) => {
                 params: translateParams,
                 translation: translationResult.result.translations
             });
+            res.json(translations);
 
             // next translate
             // translateParams = {
@@ -34,7 +35,7 @@ router.post("/translate", (req, res) => {
             //     modelId: 'en-pt',
             // }
             //res.json(translationResult.result.translations, null, 2);
-            return languageTranslator.translate(translateParams);
+            //return languageTranslator.translate(translateParams);
         })
         // .then(translationResult => {
         //     translations.push({
@@ -42,7 +43,7 @@ router.post("/translate", (req, res) => {
         //         translation: translationResult.result.translations
         //     });
 
-        //     res.json(translations);
+       
         // })
         .catch(err => {
             console.log('error:', err);
