@@ -17,16 +17,16 @@ const Card = (props) => (
     <div className="card-container">
         <div className="card">
             <div className="front">
-                <div className="eng">English word</div>
+            <Quiz/>
             </div>
             <div className="front back">
-                <div className="fr">French word</div>
+            <Quiz/>
             </div>
             
         </div>
     </div>
     <DrawButton/>
-    <Quiz/>
+    
 
     
     </Col>
