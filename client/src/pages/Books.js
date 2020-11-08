@@ -78,16 +78,7 @@ function Books() {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
-            {translations.length ? (
-              <List>
-                {translations.map( (translation, index) => (
-                <ListItem key={"translate-"+index}>
-                  {translation}
-                </ListItem>))}
-              </List>
-            ): <span>No translations</span>}
-          </Col>
+        
           <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>My Flashcard list</h1>
@@ -108,6 +99,16 @@ function Books() {
             ) : (
               <h3>No Flashcards to Display</h3>
             )}
+            <Col size="md-6 sm-12">
+            {translations.length ? (
+              <List>
+                {translations.map( (translation, index) => (
+                <ListItem key={"translate-"+index}>
+                  {translation}
+                </ListItem>))}
+              </List>
+            ): <span>No translations</span>}
+          </Col>
           </Col>
         </Row>
       </Container>
