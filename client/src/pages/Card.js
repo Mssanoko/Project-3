@@ -79,12 +79,8 @@ componentWillMount(){
 
               
             </div>
-            
-            <div className="buttonRow">
-              <DrawButton drawCard={this.updateCard}/>
-            </div>
           </div>
-
+          <DrawButton/>
           <Quiz/>
          
 
