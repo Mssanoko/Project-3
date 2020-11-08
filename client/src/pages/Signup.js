@@ -66,7 +66,9 @@ function Signup() {
 
     return (<div>
         <Nav />
+        <h2>WELCOME TO VOCABULARY-BEE</h2>
         <h1>Signup page</h1>
+        <h3>If you already have an account please login</h3>
         <form id="test1" onSubmit={submitHandler}>
        Name
         <input
