@@ -76,12 +76,11 @@ componentWillMount(){
         <Col size="md-6">
           <div className="Card">
             <div className="cardRow">
-
-              
+            <Quiz/>
             </div>
           </div>
           <DrawButton/>
-          <Quiz/>
+          
          
 
           </Col>
