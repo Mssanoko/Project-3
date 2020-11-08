@@ -26,9 +26,6 @@ const Card = (props) => (
         </div>
     </div>
     <DrawButton/>
-    
-
-    
     </Col>
           </Row>
           </Container>  
