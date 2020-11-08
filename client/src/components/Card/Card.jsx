@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
-import Quiz from '../Quiz/Quiz'
+import Quiz from '../Quiz/Quiz';
+import DrawButton from '../DrawButton/DrawButton'
 
   
 
@@ -21,9 +22,10 @@ const Card = (props) => (
             <div className="front back">
                 <div className="fr">French word</div>
             </div>
+            
         </div>
-
     </div>
+    <DrawButton/>
     <Quiz/>
 
     
