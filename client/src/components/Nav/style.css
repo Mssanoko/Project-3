@@ -1,7 +1,16 @@
 .logged-in-text{
     font-size:10px;
-    a{
-        font-size: 14px;
-        color: white;
-    }
 }
+  .navbar-brand {
+        font-size: 20px;
+        color:navy;
+        background-color: aquamarine;
+    }
+.navbar{
+    background-color: aquamarine;
+    
+}
+.bg-primary{
+    background-color: aquamarine;
+}
+    
