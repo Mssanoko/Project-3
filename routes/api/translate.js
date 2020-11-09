@@ -27,6 +27,11 @@ router.post("/translate", (req, res) => {
                 params: translateParams,
                 translation: translationResult.result.translations
             });
+
+
+            // instead of responsing immeditaly we can REDIRECT 
+            // to another route that creates a flash card 
+            // form this transation and adds it into the logged in user's flashcards array
             res.json(translations);
 
             // next translate

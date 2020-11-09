@@ -15,7 +15,8 @@ export default {
   },
   // Saves a book to the database
   translate: function (bookData) {
-    return axios.post("/api/translate/translate", bookData);
+    return axios.post("/api/translate/translate", bookData)
+    //.then(// here make AJAX request to add translation to user flashcards)
   },
   login: function(userData){
     return axios.post("/api/user/login", userData);

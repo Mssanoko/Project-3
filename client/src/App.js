@@ -13,6 +13,8 @@ import Logout from "./pages/Logout";
 function App() {
   const [email, setEmail] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+
+  // i suggest putting translations/flashcards state here.
   return (
     <Router>
       <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
