@@ -1,7 +1,7 @@
 import axios from "axios";
 // add login and signup route
 export default {
-  // Gets all books
+  // Gets all flashcards
   getFlashcards: function () {
     return axios.get("/api/flashcards");
   },
@@ -15,7 +15,8 @@ export default {
   },
   // Saves a book to the database
   translate: function (bookData) {
-    return axios.post("/api/translate/translate", bookData);
+    return axios.post("/api/translate/translate", bookData)
+    //.then(// here make AJAX request to add translation to user flashcards)
   },
   login: function(userData){
     return axios.post("/api/user/login", userData);

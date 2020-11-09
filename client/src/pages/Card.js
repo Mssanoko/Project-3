@@ -63,7 +63,7 @@ componentWillMount(){
       render(){
         return (
 
-          <>
+          
           <div className="Card">
             <div className="cardRow">
               <Card eng={this.state.currentCard.eng}
@@ -76,24 +76,21 @@ componentWillMount(){
         <Col size="md-6">
           <div className="Card">
             <div className="cardRow">
-
-              
-            </div>
-            
-            <div className="buttonRow">
-              <DrawButton drawCard={this.updateCard}/>
+            <Quiz/>
             </div>
           </div>
-
-          <Quiz/>
-          </>
+          <DrawButton/>
+          
+         
 
           </Col>
           </Row>
           </Container>
+          </div>
+          </div>
 
         )
       }
     }
 
-    export default Card;
+    export default Card

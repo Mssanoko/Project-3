@@ -1,12 +1,13 @@
 //need name email pw
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
 import { useContext } from 'react';
 import SignUpForm from '../components/SignUpForm';
 import {Redirect} from 'react-router-dom';
 import UserContext from '../utils/UserContext';
-import Nav from "../components/Nav";
+// import Nav from "../components/Nav";
 
 function SignUp(props){
     const {loggedIn} = useContext(UserContext);
@@ -65,8 +66,10 @@ function Signup() {
 
 
     return (<div>
-        <Nav />
+        <h2>WELCOME TO VOCABULARY-BEE</h2>
         <h1>Signup page</h1>
+        <h3>If you already have an account please login</h3>
+        <Link to="/login" >LOGIN</Link>
         <form id="test1" onSubmit={submitHandler}>
        Name
         <input

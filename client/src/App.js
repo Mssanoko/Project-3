@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Books from "./pages/Books";
+import Translate from "./pages/translate";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Signup from "./pages/Signup";
@@ -9,18 +9,21 @@ import Login from "./pages/Login";
 import Quiz from './components/Quiz/Quiz'
 import UserContext from "./utils/UserContext";
 import Logout from "./pages/Logout";
+import Nav from "./components/Nav";
 
 function App() {
   const [email, setEmail] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+
+  // i suggest putting translations/flashcards state here.
   return (
     <Router>
       <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
       <div>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
-          <Route exact path={"/books"}>
-            <Books />
+          <Route exact path={"/translate"}>
+            <Translate />
           </Route>
           <Route exact path={"/login"}>
             <Login />

@@ -8,22 +8,22 @@ import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 import Nav from "../components/Nav";
 
-function Books() {
+function Translates() {
   // Setting our component's initial state
-  const [books, setBooks] = useState([])
+  const [translates, setTranslate] = useState([])
   const [formObject, setFormObject] = useState({})
   const [translations, setTranslations] = useState([]);
 
-  // Load all books and store them with setBooks
+  // Load all the user's flashcards and update translations (translatinl = flashcard)
   useEffect(() => {
-    
+    // hit the /user_data GET rouite and set the results into translations state
   }, [])
 
 
 
   // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
+  function deleteTranslate(id) {
+    API.deleteTranslate(id)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }
@@ -49,7 +49,13 @@ function Books() {
           const biggerList = [...translations, res.data[0].translation[0].translation];
 
           setTranslations(biggerList)
+ 
+            // here you can make the AJAX request to add tranlstion to user flashcards
+            // API.addToUserFlashcards().then(() => {
 
+            // })
+            // after you have added the new flashcard, you have to update your flashcards state.
+            // you can still use setTranslations if you want and the old logic
         })
         .catch(err => console.log(err));
      }
@@ -57,7 +63,7 @@ function Books() {
 
     return (
       <Container fluid>
-        {/* <Nav /> */}
+        <Nav />
         <Row>
           <Col size="md-6">
             <Jumbotron>
@@ -78,7 +84,28 @@ function Books() {
               </FormBtn>
             </form>
           </Col>
+        
           <Col size="md-6 sm-12">
+            <Jumbotron>
+              <h1>My Flashcard list</h1>
+            </Jumbotron>
+            {translates.length ? (
+              <List>
+                {translates.map(book => (
+                  <ListItem key={book._id}>
+                    <Link to={"/books/" + book._id}>
+                      <strong>
+                        {book.phrase}
+                      </strong>
+                    </Link>
+                    <DeleteBtn onClick={() => deleteTranslate(translates._id)} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Flashcards to Display</h3>
+            )}
+            <Col size="md-6 sm-12">
             {translations.length ? (
               <List>
                 {translations.map( (translation, index) => (
@@ -88,26 +115,6 @@ function Books() {
               </List>
             ): <span>No translations</span>}
           </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>My Flashcard list</h1>
-            </Jumbotron>
-            {books.length ? (
-              <List>
-                {books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.phrase}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Flashcards to Display</h3>
-            )}
           </Col>
         </Row>
       </Container>
@@ -115,4 +122,4 @@ function Books() {
   }
 
 
-export default Books;
+export default Translates;
