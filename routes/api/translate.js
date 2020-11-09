@@ -7,7 +7,6 @@ console.log("tranalte set up");
 // -> /api/translate/test
 router.post("/translate", (req, res) => {
     //res.json(languageTranslator);
-
     console.log("tranlating", req.body.text)
     console.log("user info", req.user)
 
@@ -27,7 +26,15 @@ router.post("/translate", (req, res) => {
                 params: translateParams,
                 translation: translationResult.result.translations
             });
-
+            db.Flashcard.create({phrase:originalPhrase, translation: translatedPhrase})
+            .then(function(flashcard) {
+                console.log(flashcard);
+                return db.User.findOneAndUpdate({_id:req.user._id},{$push:{flashcards: flashcard._id}})
+                
+            })
+            .then(function(){
+                console.log("flashcard created");
+            })
 
             // instead of responsing immeditaly we can REDIRECT 
             // to another route that creates a flash card 
