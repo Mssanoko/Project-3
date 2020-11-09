@@ -3,14 +3,14 @@
 }
   .navbar-brand {
         font-size: 20px;
-        color:navy;
-        background-color: aquamarine;
+        color: palegoldenrod;
+        
     }
 .navbar{
-    background-color: aquamarine;
+    background-color:orange;
     
 }
-.bg-primary{
-    background-color: aquamarine;
-}
-    
+
+   a{
+        color: palegoldenrod;
+    }

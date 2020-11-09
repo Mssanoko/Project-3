@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Quiz from './components/Quiz/Quiz'
 import UserContext from "./utils/UserContext";
 import Logout from "./pages/Logout";
+import Nav from "./components/Nav";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ function App() {
     <Router>
       <UserContext.Provider value={{ email, setEmail, loggedIn, setLoggedIn }}>
       <div>
-        {/* <Nav /> */}
+        <Nav />
         <Switch>
           <Route exact path={"/translate"}>
             <Translate />
