@@ -8,9 +8,9 @@ import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
 import Nav from "../components/Nav";
 
-function Books() {
+function Translates() {
   // Setting our component's initial state
-  const [books, setBooks] = useState([])
+  const [translates, setTranslate] = useState([])
   const [formObject, setFormObject] = useState({})
   const [translations, setTranslations] = useState([]);
 
@@ -22,8 +22,8 @@ function Books() {
 
 
   // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteBook(id) {
-    API.deleteBook(id)
+  function deleteTranslate(id) {
+    API.deleteTranslate(id)
       .then(res => console.log(res))
       .catch(err => console.log(err));
   }
@@ -89,16 +89,16 @@ function Books() {
             <Jumbotron>
               <h1>My Flashcard list</h1>
             </Jumbotron>
-            {books.length ? (
+            {translates.length ? (
               <List>
-                {books.map(book => (
+                {translates.map(book => (
                   <ListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
                         {book.phrase}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
+                    <DeleteBtn onClick={() => deleteTranslate(translates._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -122,4 +122,4 @@ function Books() {
   }
 
 
-export default Books;
+export default Translates;
