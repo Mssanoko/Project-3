@@ -8,6 +8,10 @@ import DrawButton from '../DrawButton/DrawButton'
 import Nav from "../../components/Nav";
 import { Container, Row, Col } from "../../components/Grid";
 
+
+  // Load all the user's flashcards and update translations (translatinl = flashcard)
+//   useEffect(() => {
+    // hit the /user_data GET rouite and set the results into translations state
 const Card = (props) => (
     <Container fluid>
     <Nav />

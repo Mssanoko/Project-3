@@ -53,7 +53,13 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
   });
 
   // Route for getting some data about our user to be used client side
+
+  // you NEED to return flashcards too!
   router.get("/user_data", function(req, res) {
+
+    // use the user ID to find the user in Mongoose
+    //db.User.findById more or less
+    // you need to return that, alond with the flashcards in it
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});

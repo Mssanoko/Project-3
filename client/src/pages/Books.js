@@ -14,9 +14,9 @@ function Books() {
   const [formObject, setFormObject] = useState({})
   const [translations, setTranslations] = useState([]);
 
-  // Load all books and store them with setBooks
+  // Load all the user's flashcards and update translations (translatinl = flashcard)
   useEffect(() => {
-    
+    // hit the /user_data GET rouite and set the results into translations state
   }, [])
 
 
@@ -49,7 +49,13 @@ function Books() {
           const biggerList = [...translations, res.data[0].translation[0].translation];
 
           setTranslations(biggerList)
+ 
+            // here you can make the AJAX request to add tranlstion to user flashcards
+            // API.addToUserFlashcards().then(() => {
 
+            // })
+            // after you have added the new flashcard, you have to update your flashcards state.
+            // you can still use setTranslations if you want and the old logic
         })
         .catch(err => console.log(err));
      }
