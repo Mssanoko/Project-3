@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card  from "../components/Card/Card";
+import Flashcard  from "../components/Card/Card";
 import DrawButton from "../components/DrawButton/DrawButton";
 
 import Quiz from '../components/Quiz/Quiz'
@@ -23,22 +23,8 @@ class Cards extends Component {
 
 
 
-componentWillMount(){
-    console.log(this.app.database().ref().child('cards'))
-    const currentCards = this.state.cards;
-    this.database.on('child_added', snap => {
-      currentCards.push({
-        id: snap.key,
-        eng: snap.val().eng,
-        fr: snap.val().fr,
-      })
-
-      this.setState({
-        cards: currentCards,
-        currentCard: this.getRandomCard(currentCards)
-      })
-
-    })
+componentDidMount(){
+   console.log("get flashcard")
   }
 
 
@@ -61,36 +47,48 @@ componentWillMount(){
       }
     
       render(){
+        console.log("cards", this.state.cards)
         return (
-
           
-          <div className="Card">
-            <div className="cardRow">
-              <Card eng={this.state.currentCard.eng}
-                fr={this.state.currentCard.fr}
-              />
-
           <Container fluid>
+    
+    <Row>
+    <Col size="md-6">
+    <Flashcard></Flashcard>
+    <DrawButton/>
+    </Col>
+          </Row>
+          </Container> 
+          
+        //   <div className="Card">
+            
+        //     <div className="cardRow">
+        //       <Card eng={this.state.currentCard.eng}
+        //         fr={this.state.currentCard.fr}
+        //       />
+
+        //   <Container fluid>
         
-        <Row>
-        <Col size="md-6">
-          <div className="Card">
-            <div className="cardRow">
-            <Quiz/>
-            </div>
-          </div>
-          <DrawButton/>
+        // <Row>
+        // <Col size="md-6">
+        //   <div className="Card">
+        //     <div className="cardRow">
+        //     <Quiz/>
+        //     </div>
+        //   </div>
+        //   {/* <DrawButton/> */}
+        //   hello do we see this
           
          
 
-          </Col>
-          </Row>
-          </Container>
-          </div>
-          </div>
+        //   </Col>
+        //   </Row>
+        //   </Container>
+        //   </div>
+        //   </div>
 
         )
       }
     }
 
-    export default Card
+    export default Cards

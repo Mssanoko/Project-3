@@ -2,6 +2,7 @@ import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
 import './style.scss';
+import {Navbar, Nav} from 'react-bootstrap';
 
 function MainNav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
