@@ -12,7 +12,7 @@ const Card = (props) => (
     <Container fluid>
     
     <Row>
-    <Col size="md-6">
+    <Col size="md-12">
 
     <div className="card-container">
         <div className="card">
