@@ -7,6 +7,7 @@ function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn, name, setName } = useContext(UserContext);
     const emailInput = useRef();
     const passwordInput = useRef();
+    const nameInput = useRef();
     let extraProps = {}
     if (props.className) {
         extraProps.className = props.className;

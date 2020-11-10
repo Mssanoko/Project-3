@@ -15,7 +15,9 @@ function SignUp(props){
     return (
         <div className="container">
             {loggedIn && <Redirect to="/" />}
+           <h1>WELCOME TO VOCABULARY BEE</h1>
             <h1>SignUp</h1>
+            <h3>If you have an account please login above</h3>
             <SignUpForm className="full-page-signup" />
         </div>
     )
