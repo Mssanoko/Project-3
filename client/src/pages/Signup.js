@@ -1,6 +1,5 @@
 //need name email pw
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import API from "../utils/API";
 import { useContext } from 'react';
