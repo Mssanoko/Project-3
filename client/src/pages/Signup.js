@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import SignUpForm from '../components/SignUpForm';
 import {Redirect} from 'react-router-dom';
 import UserContext from '../utils/UserContext';
-// import Nav from "../components/Nav";
 
 function SignUp(props){
     const {loggedIn} = useContext(UserContext);
