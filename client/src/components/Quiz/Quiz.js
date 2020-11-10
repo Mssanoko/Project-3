@@ -84,9 +84,13 @@ class Main extends React.Component {
     }
 
     handleShowButton() {
+          //calculate the score
+            //change the question
+            // change the answer
+            // state the state
         this.setState({
             showButton: true,
-            questionAnswered: true
+            questionAnswered: true,
         })
     }
 
