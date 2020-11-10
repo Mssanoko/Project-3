@@ -1,17 +1,26 @@
 .logged-in-text{
     font-size:10px;
 }
-  .navbar-brand {
-        font-size: 20px;
-        color: palegoldenrod;
-        
-    }
-.navbar{
-    background-color:orange;
-    
+.navbar-brand {
+    font-size: 20px;
+    color: palegoldenrod;      
 }
 
-   a{
-        color: palegoldenrod;
-    
-    }
+.main-header{
+    background-color:orange;
+    font-size: large; 
+}
+.nav-area{
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    color: palegoldenrod;
+    display: inline;
+}
+
+#nav {
+    display: inline;
+}
+

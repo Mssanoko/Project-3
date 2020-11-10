@@ -19,6 +19,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+  if(req.headers['x-forwarded-proto'] === 'https') {
+      res.redirect('http://' + req.hostname + req.url);
+  } else {
+      next();
+  }
+});
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -27,7 +34,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/27017/vocabularyBee_db");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/vocabularyBee_db");
 
 // Start the API server
 app.listen(PORT, function() {
