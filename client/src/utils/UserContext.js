@@ -4,7 +4,9 @@ const UserContext = createContext({
     email: "",
     setEmail: () => {},
     loggedIn: false,
-    setLoggedIn: () => {}
+    setLoggedIn: () => {}, 
+    name: "",
+    setName: () => {}
 });
 
 export default UserContext;
