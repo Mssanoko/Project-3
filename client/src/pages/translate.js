@@ -87,7 +87,7 @@ function Translates() {
         
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>My Flashcard list</h1>
+              <h1> Flashcard list</h1>
             </Jumbotron>
             {translates.length ? (
               <List>
@@ -103,7 +103,7 @@ function Translates() {
                 ))}
               </List>
             ) : (
-              <h3>No Flashcards to Display</h3>
+              <h3>Flashcards to Display</h3>
             )}
             <Col size="md-6 sm-12">
             {translations.length ? (
