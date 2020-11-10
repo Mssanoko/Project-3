@@ -19,6 +19,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+  if(req.headers['x-forwarded-proto'] === 'https') {
+      res.redirect('http://' + req.hostname + req.url);
+  } else {
+      next();
+  }
+});
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, hashHistory, IndexRoute } from "react-router-dom";
 import Translate from "./pages/translate";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
