@@ -9,7 +9,11 @@ import Login from "./pages/Login";
 import Quiz from './components/Quiz/Quiz'
 import UserContext from "./utils/UserContext";
 import Logout from "./pages/Logout";
+
+import Nav from "./components/Nav";
+import ContactUs from "./pages/ContactUs"
 import MainNav from "./components/Nav";
+
 
 function App() {
   const [email, setEmail] = useState("");
@@ -40,6 +44,9 @@ function App() {
           </Route>
           <Route exact path={"/quiz"}>
             <Quiz />
+          </Route>
+          <Route exact path={"/contactus"}>
+            <ContactUs />
           </Route>
           <Route exact path="/logout">
             <Logout />
