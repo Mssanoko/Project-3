@@ -22,8 +22,8 @@ He/she would like to start learning a new language for pleasure or business and 
 
 ## DEPLOYED LINKS
 
-* [GitHub Link] ()
-* [Deployed Heroku Link] ()
+* [GitHub Link](https://github.com/abouelelas/Project-3)
+* [Deployed Heroku Link](https://floating-earth-22602.herokuapp.com/)
 
 ## Screenshots
 
