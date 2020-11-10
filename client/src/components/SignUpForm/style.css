@@ -1,4 +1,7 @@
 h1, h2, h3{
     text-align: center;
     color: orange;
+    margin-right: 300px;
+    margin-bottom: 20px;
+    font-weight: 40px;
 }

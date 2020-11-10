@@ -51,7 +51,7 @@ function SignUpForm(props) {
                         <div className="form-group">
                             <label htmlFor={emailId}>Email address</label>
                             <input ref={emailInput} type="email" className="form-control" id={emailId} aria-describedby={emailHelpId} />
-                            <small id={emailHelpId} className="email-help-text form-text text-muted">We'll never share your email with anyone else.</small>
+                            <small id={emailHelpId} className="email-help-text form-text text-muted"></small>
                         </div>
                         <div className="form-group">
                             <label htmlFor={passwordId}>Password</label>
