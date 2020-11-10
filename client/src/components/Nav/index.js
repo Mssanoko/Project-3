@@ -1,7 +1,7 @@
 import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
-import './style.css';
+import './style.scss';
 
 function Nav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
