@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useRef } from 'react';
-// import "./style.scss";
+import "./style.css";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
 
@@ -28,7 +28,7 @@ function SignUpForm(props) {
         // .catch(err => {
         //     console.log(err);
         // });
-        API.signup({ email: emailInput.current.value, password: passwordInput.current.value, name: nameInput.current.value})
+        API.signUp({ email: emailInput.current.value, password: passwordInput.current.value, name: nameInput.current.value})
             .then(data => {
                 // console.log(data);
                 setEmail(data.data.email);

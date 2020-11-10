@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import SignUpForm from '../components/SignUpForm';
 import {Redirect} from 'react-router-dom';
 import UserContext from '../utils/UserContext';
-// import Nav from "../components/Nav";
 
 function SignUp(props){
     const {loggedIn} = useContext(UserContext);
@@ -16,7 +15,7 @@ function SignUp(props){
         <div className="container">
             {loggedIn && <Redirect to="/" />}
            <h1>WELCOME TO VOCABULARY BEE</h1>
-            <h1>SignUp</h1>
+            <h2>SignUp</h2>
             <h3>If you have an account please login above</h3>
             <SignUpForm className="full-page-signup" />
         </div>

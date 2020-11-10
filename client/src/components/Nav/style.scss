@@ -11,10 +11,19 @@ $size: 10px;
     }
 .navbar{
     background-color:orange;
-    
+    font-size: large; 
+}
+.nav-area{
+    display: flex;
+    justify-content: flex-end;
 }
 
-   a{
-        color: palegoldenrod;
-    
-    }
+a {
+    color: palegoldenrod;
+    display: inline;
+}
+
+#nav {
+    display: inline;
+}
+
