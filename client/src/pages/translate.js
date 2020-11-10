@@ -67,7 +67,7 @@ function Translates() {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Translate anything from English to French
+              <h1>Translate from English to French
               </h1>
             </Jumbotron>
             <form>
@@ -87,7 +87,7 @@ function Translates() {
         
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>My Flashcard list</h1>
+              <h1> Flashcard List</h1>
             </Jumbotron>
             {translates.length ? (
               <List>
@@ -103,7 +103,7 @@ function Translates() {
                 ))}
               </List>
             ) : (
-              <h3>No Flashcards to Display</h3>
+              <h3>Flashcards to Display</h3>
             )}
             <Col size="md-6 sm-12">
             {translations.length ? (

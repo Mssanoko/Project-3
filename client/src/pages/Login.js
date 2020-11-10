@@ -8,7 +8,7 @@ function Login(props){
     const {loggedIn} = useContext(UserContext);
     return (
         <div className="container">
-            {loggedIn && <Redirect to="/login" />}
+            {loggedIn && <Redirect to="/translate" />}
             <h1>Login</h1>
             <LoginForm className="full-page-login" />
         </div>

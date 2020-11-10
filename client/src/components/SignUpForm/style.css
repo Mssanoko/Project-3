@@ -1,1 +1,8 @@
-/* https://i.pinimg.com/236x/6f/5a/14/6f5a1408a2da90a6f5a98c17cb21a6aa.jpg */
+h1, h2, h3{
+    text-align: center;
+    color: orange;
+    margin: 20px;
+    font-weight: 40px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 0.5rem;
+}
