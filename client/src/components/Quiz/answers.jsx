@@ -1,69 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-class Answers extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isAnswered: false,
-            classNames: ['', '', '', '']
-        }
-        
-        this.checkAnswer = this.checkAnswer.bind(this);
-    }
-    
-    checkAnswer(e) {
-        let { isAnswered } = this.props;
-        
-        if(!isAnswered) {
-            let elem = e.currentTarget;
-            let { correct, increaseScore } = this.props;
+function Answers(props) {
+    const [isAnswered, setIsAnswered] = useState(false);
+    const [classNames, setClassNames] = useState(['', '', '', '']);
+
+
+    const checkAnswer = (e) => {
+        console.log(e.target);
+        let { isAnswered } = props;
+
+        if (!isAnswered) {
+            let elem = e.target;
+            let { correct, increaseScore } = props;
             let answer = Number(elem.dataset.id);
-            let updatedClassNames = this.state.classNames;
+            let updatedClassNames = classNames;
 
-            if(answer === correct){
-                updatedClassNames[answer-1] = 'right';
+            if (answer === correct) {
+                updatedClassNames[answer - 1] = 'right';
                 increaseScore();
             }
             else {
-                updatedClassNames[answer-1] = 'wrong';
+                updatedClassNames[answer - 1] = 'wrong';
             }
-            
-            this.setState({
-                classNames: updatedClassNames
-            })
 
-            this.props.showButton();
+            setClassNames(updatedClassNames);
+
+            props.showButton();
         }
     }
-    
-    shouldComponentUpdate() {
-        this.setState({
-            classNames: ['', '', '', '']
-        });
-        return true;
-    }
-    
-    render() {
-        let { answers } = this.props;
-        let { classNames } = this.state;
-        
-        let transition = {
-            transitionName: "example",
-            transitionEnterTimeout: 500,
-            transitionLeaveTimeout: 300
-        }
-        
-        return (
-            <div id="answers">
-                <ul>
-                    <li onClick={this.checkAnswer} className={classNames[0]} data-id="1"><span>A</span> <p>{answers[0]}</p></li>
-                    <li onClick={this.checkAnswer} className={classNames[1]} data-id="2"><span>B</span> <p>{answers[1]}</p></li>
-                    <li onClick={this.checkAnswer} className={classNames[2]} data-id="3"><span>C</span> <p>{answers[2]}</p></li>
-                    <li onClick={this.checkAnswer} className={classNames[3]} data-id="4"><span>D</span> <p>{answers[3]}</p></li>
-                </ul>
-            </div>
-        );
-    }
+    let { answers } = props;
+
+    // let transition = {
+    //     transitionName: "example",
+    //     transitionEnterTimeout: 500,
+    //     transitionLeaveTimeout: 300
+    // }
+
+    return (
+        <div id="answers">
+            <ul>
+                <li onClick={checkAnswer} className={classNames[0]} data-id="1"><span>A</span> <p>{answers[0]}</p></li>
+                <li onClick={checkAnswer} className={classNames[1]} data-id="2"><span>B</span> <p>{answers[1]}</p></li>
+                <li onClick={checkAnswer} className={classNames[2]} data-id="3"><span>C</span> <p>{answers[2]}</p></li>
+                <li onClick={checkAnswer} className={classNames[3]} data-id="4"><span>D</span> <p>{answers[3]}</p></li>
+            </ul>
+        </div>
+    );
 }
 
 export default Answers
