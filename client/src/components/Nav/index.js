@@ -2,6 +2,7 @@ import React, {useState, Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../utils/UserContext";
 import './style.css';
+import ContactUs from "../../pages/ContactUs";
 
 function Nav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
@@ -33,7 +34,7 @@ function Nav() {
       <Link to="/card" >Flashcard</Link>
       <Link to="/translate" >Translate</Link>
       <Link to="/quiz" >Quiz</Link>
-      <Link to="/card" >About Us</Link>
+      <Link to="/ContactUs" >{ContactUs}ContactUs</Link>
     </nav>
   );
 }
