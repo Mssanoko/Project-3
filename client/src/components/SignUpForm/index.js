@@ -32,7 +32,7 @@ function SignUpForm(props) {
             .then(data => {
                 // console.log(data);
                 setEmail(data.data.email);
-                setLoggedIn(true);
+                setLoggedIn();
                 setName(data.data.name);
             })
             .catch(err => {
