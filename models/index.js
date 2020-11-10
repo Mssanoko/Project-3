@@ -1,5 +1,5 @@
 module.exports = {
   Flashcard: require("./Flashcard"),
-  User: require("./User")
+  User: require("./user")
   
 };
