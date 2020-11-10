@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/vocabular
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-=======
+
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
