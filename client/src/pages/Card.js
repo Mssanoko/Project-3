@@ -4,7 +4,7 @@ import DrawButton from "../components/DrawButton/DrawButton";
 
 import Quiz from '../components/Quiz/Quiz'
 
-import Nav from "../components/Nav";
+
 import { Container, Row, Col } from "../components/Grid";
 
 
@@ -71,7 +71,7 @@ componentWillMount(){
               />
 
           <Container fluid>
-        <Nav />
+        
         <Row>
         <Col size="md-6">
           <div className="Card">
