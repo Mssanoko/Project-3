@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useRef } from 'react';
-// import "./style.scss";
+import "./style.css";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
 
