@@ -117,7 +117,7 @@ class Main extends React.Component {
                 <Popup style={{display: displayPopup}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
 
                 <div className="row">
-                    <div className="col-lg-10 col-lg-offset-1">
+                    <div className="col-lg-10">
                         <div id="question">
                             <h4>Question {nr}/{total}</h4>
                             <p>{question}</p>

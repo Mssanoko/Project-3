@@ -29,5 +29,8 @@ export default {
   },
   getUser: function(){
     return axios.get("/api/user/user-data");
-  }
+  },
+  userFlashcards: function(){
+    return axios.get("/api/flashcards/userFlashcards");
+  },
 };
