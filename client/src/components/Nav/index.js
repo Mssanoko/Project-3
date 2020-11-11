@@ -5,6 +5,8 @@ import UserContext from "../../utils/UserContext";
 import './style.scss';
 import {Navbar, Nav} from 'react-bootstrap';
 
+import ContactUs from '../../pages/ContactUs';
+
 function MainNav() {
   const [loginExpanded, setLoginExpanded] = useState(false);
   const {email, loggedIn} = useContext(UserContext);
@@ -20,7 +22,11 @@ function MainNav() {
       <Nav.Link href="/card">Flashcard</Nav.Link>
       <Nav.Link href="/translate">Translate</Nav.Link>
       <Nav.Link href="/quiz">Quiz</Nav.Link>
+
       <Nav.Link href="/card">About Us</Nav.Link>
+
+  <Nav.Link href="/ContactUs">Contact Us{ContactUs}</Nav.Link>
+
     </Nav>
   </Navbar.Collapse>
 </Navbar>

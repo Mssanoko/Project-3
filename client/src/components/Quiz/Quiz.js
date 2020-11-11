@@ -112,7 +112,11 @@ class Main extends React.Component {
         let { nr, total, question, answers, correct, showButton, questionAnswered, displayPopup, score} = this.state;
 
         return (
+
             <div className="quizcontainer">
+
+
+            <>
 
                 <Popup style={{display: displayPopup}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
 
@@ -128,7 +132,7 @@ class Main extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         );
     }
 };
