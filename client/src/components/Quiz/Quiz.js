@@ -33,6 +33,7 @@ import React from 'react';
 import data from '../../data/data';
 import Answers from './answers';
 import Popup from './PopUp';
+import './quiz.css';
 
 
 class Main extends React.Component {
@@ -111,7 +112,7 @@ class Main extends React.Component {
         let { nr, total, question, answers, correct, showButton, questionAnswered, displayPopup, score} = this.state;
 
         return (
-            <div className="container">
+            <div className="quizcontainer">
 
                 <Popup style={{display: displayPopup}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
 

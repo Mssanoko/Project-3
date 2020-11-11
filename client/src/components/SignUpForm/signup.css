@@ -1,0 +1,14 @@
+header{
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 75px;
+    padding-bottom: 10px;
+}
+
+h2, h3{
+    text-align: center;
+    color:orange;
+    margin-bottom: 20px;
+    font-weight: 30px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}

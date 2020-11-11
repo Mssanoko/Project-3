@@ -1,4 +1,5 @@
 import React from 'react';
+import './quiz.css'
 
 class Popup extends React.Component {
     constructor(props) {
@@ -6,8 +7,8 @@ class Popup extends React.Component {
         
         this.state = {
             time: 'start',
-            title: 'Welcome to Quizz',
-            buttonText: 'Start the quiz' 
+            title: 'Welcome to the Quizzzzz',
+            buttonText: 'Start the quizz' 
         };
         
         this.popupHandle = this.popupHandle.bind(this);
@@ -51,7 +52,7 @@ class Popup extends React.Component {
                 <div className="container">
                     <div className="col-md-8 col-md-offset-2">
                         <div className="popup">
-                            <h1>{title}</h1>
+                            <h5>{title}</h5>
                             <p dangerouslySetInnerHTML={this.createMarkup(text)} />
                             <button className="fancy-btn" onClick={this.popupHandle}>{buttonText}</button>
                         </div>
