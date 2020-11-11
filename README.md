@@ -27,6 +27,7 @@ He/she would like to start learning a new language for pleasure or business and 
 
 ## Screenshots
 
-![]()
-![]()
+![Screenshot](https://github.com/abouelelas/Project-3/blob/main/client/public/assets/SS1.png)
+![Screenshot](https://github.com/abouelelas/Project-3/blob/main/client/public/assets/SS2.png)
+![Screenshot](https://github.com/abouelelas/Project-3/blob/main/client/public/assets/SS3.png)
 
