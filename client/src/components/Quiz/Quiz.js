@@ -1,34 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import API from '../../utils/API';
-
-// function Quiz() {
-//     const [quizArr, setQuizArr] = useState();
-
-//     const handlegetFlashcards = ()=>{
-//         API.getFlashcards().then(data => {
-//             console.log(data.data);
-//             setQuizArr(data.data);
-          
-//         })
-//             .catch(err => {
-//                 console.log(err);
-//             });
-//     }
-  
-
-//     //    const choice1 = (phrase) => {
-//     //    }
-//    useEffect(()=>{handlegetFlashcards()},[])
-
-//     return (
-//         <>
-//             <h1>HELLO {JSON.stringify(quizArr)}</h1>
-//         </>
-//     );
-// }
-
-// export default Quiz;
-
 import React from 'react';
 import data from '../../data/data';
 import Answers from './answers';
@@ -56,7 +25,7 @@ class Main extends React.Component {
     pushData(nr) {
         this.setState({
             question: data[nr].question,
-            answers: [data[nr].answers[0], data[nr].answers[1], data[nr].answers[2], data[nr].answers[3] ],
+            answers: [data[nr].answers[0], data[nr].answers[1], data[nr].answers[2], data[nr].answers[3]],
             correct: data[nr].correct,
             nr: this.state.nr + 1
         });
@@ -70,7 +39,7 @@ class Main extends React.Component {
     nextQuestion() {
         let { nr, total, score } = this.state;
 
-        if(nr === total){
+        if (nr === total) {
             this.setState({
                 displayPopup: 'flex'
             });
@@ -85,10 +54,10 @@ class Main extends React.Component {
     }
 
     handleShowButton() {
-          //calculate the score
-            //change the question
-            // change the answer
-            // state the state
+        //calculate the score
+        //change the question
+        // change the answer
+        // state the state
         this.setState({
             showButton: true,
             questionAnswered: true,
@@ -109,30 +78,31 @@ class Main extends React.Component {
     }
 
     render() {
-        let { nr, total, question, answers, correct, showButton, questionAnswered, displayPopup, score} = this.state;
+        let { nr, total, question, answers, correct, showButton, questionAnswered, displayPopup, score } = this.state;
 
         return (
 
             <div className="quizcontainer">
 
 
-            <>
+                <>
 
-                <Popup style={{display: displayPopup}} score={score} total={total} startQuiz={this.handleStartQuiz}/>
+                    <Popup style={{ display: displayPopup }} score={score} total={total} startQuiz={this.handleStartQuiz} />
 
-                <div className="row">
-                    <div className="col-lg-10">
-                        <div id="question">
-                            <h4>Question {nr}/{total}</h4>
-                            <p>{question}</p>
-                        </div>
-                        <Answers answers={answers} correct={correct} showButton={this.handleShowButton} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore}/>
-                        <div id="submit">
-                            {showButton ? <button className="fancy-btn" onClick={this.nextQuestion} >{nr===total ? 'Finish quiz' : 'Next question'}</button> : null}
+                    <div className="row">
+                        <div className="col-lg-10">
+                            <div id="question">
+                                <h4>Question {nr}/{total}</h4>
+                                <p>{question}</p>
+                            </div>
+                            <Answers answers={answers} correct={correct} showButton={this.handleShowButton} isAnswered={questionAnswered} increaseScore={this.handleIncreaseScore} />
+                            <div id="submit">
+                                {showButton ? <button className="fancy-btn" onClick={this.nextQuestion} >{nr === total ? 'Finish quiz' : 'Next question'}</button> : null}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </>
+                </>
+            </div>
         );
     }
 };

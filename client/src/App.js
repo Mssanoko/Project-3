@@ -38,7 +38,6 @@ function App() {
           <Route exact path={["/", "/signup"]}>
             <Signup />
           </Route>
-
           <Route exact path={"/card"}>
             <Card />
           </Route>
