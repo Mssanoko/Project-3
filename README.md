@@ -15,6 +15,7 @@ Local passport was used for user signup/login.  IBM/ Watson Translate was the AP
 * JS
 * HTML5
 * JSX
+* SASS
 
 
 ## USER STORY
