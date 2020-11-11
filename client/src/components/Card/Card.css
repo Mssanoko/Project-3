@@ -10,12 +10,15 @@
   }
   
   .card {
-    height: 400px;
-    width: 400px;
+    height: 300px;
+    width: 300px;
     position: absolute;
     border: 2px solid #300;
     transform-style: preserve-3d;
     transition: all 0.4s ease-in-out;
+    background-color: orange;
+    color: black;
+   
   }
   
   .card:hover {
@@ -30,7 +33,9 @@
     position: absolute;
     overflow: hidden;
     text-align: center;
-    background-color: rgba(255, 251, 251, 1);
+    /* margin-top: 100px;
+    margin-left: 100px; */
+    /* background-color: rgb(241, 237, 237); */
   }
   
   .card .back {
