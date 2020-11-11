@@ -9,22 +9,22 @@ import { Container, Row, Col } from "../../components/Grid";
 //   useEffect(() => {
     // hit the /user_data GET rouite and set the results into translations state
 const Card = (props) => (
-    
+<Col size="md-6">
 
     <div className="card-container">
         <div className="card">
             <div className="front">
             {/* <Quiz/> */}
-            front
+            {props.phrase}
             </div>
             <div className="front back">
             {/* <Quiz/> */}
-            back
+       { props.translation}
             </div>
             
         </div>
     </div>
-       
+    </Col>  
 )
 
 
