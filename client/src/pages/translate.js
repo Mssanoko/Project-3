@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -21,12 +20,7 @@ function Translates() {
 
 
 
-  // Deletes a book from the database with a given id, then reloads books from the db
-  function deleteTranslate(id) {
-    API.deleteTranslate(id)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  }
+  
 
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
@@ -98,7 +92,6 @@ function Translates() {
                         {book.phrase}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => deleteTranslate(translates._id)} />
                   </ListItem>
                 ))}
               </List>
