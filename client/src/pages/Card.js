@@ -57,20 +57,20 @@ class Cards extends Component {
   render() {
     console.log("cards", this.state.cards)
     return (
+      <>
+        <h1 className="card-heading">Click on a card to see translation</h1>
+        <Container>
 
-      <Container>
+          <Row>
 
-        <Row>
-
-          {this.state.cards.map((e, i) => <Flashcard phrase={e.phrase} translation={e.translation} key={i} />)}
-
-
-        </Row>
-
-      </Container>
+            {this.state.cards.map((e, i) => <Flashcard phrase={e.phrase} translation={e.translation} key={i} />)}
 
 
+          </Row>
 
+        </Container>
+
+      </>
     )
   }
 }

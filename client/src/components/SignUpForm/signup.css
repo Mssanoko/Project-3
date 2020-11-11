@@ -1,4 +1,4 @@
-header{
+header {
     text-align: center;
     font-family: 'Dancing Script', cursive;
     font-size: 75px;
@@ -9,6 +9,11 @@ h2, h3{
     text-align: center;
     color:orange;
     margin-bottom: 20px;
-    font-weight: 30px;
+    font-weight: 600;
     font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.section-heading {
+    font-size: 3em;
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
 }
