@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch, hashHistory, IndexRoute } from "react-router-dom";
 import Translate from "./pages/translate";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Signup from "./pages/Signup";
 import Card from "./pages/Card";
@@ -34,10 +33,6 @@ function App() {
           </Route>
           <Route exact path={["/", "/signup"]}>
             <Signup />
-          </Route>
-
-          <Route exact path="/books/:bookid">
-            <Detail />
           </Route>
           <Route exact path={"/card"}>
             <Card />

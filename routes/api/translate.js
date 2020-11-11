@@ -2,7 +2,7 @@ var db = require("../../models");
 const router = require("express").Router();
 const languageTranslator = require("../../config/apiTranslator");
 
-console.log("tranalte set up");
+console.log("translate set up");
 
 // -> /api/translate/test
 router.post("/translate", (req, res) => {
