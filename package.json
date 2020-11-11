@@ -37,6 +37,7 @@
     "ibm-watson": "^5.7.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
+    "node-sass": "^4.14.1",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-bootstrap": "^1.4.0",
