@@ -58,7 +58,7 @@ componentDidMount(){
         console.log("cards", this.state.cards)
         return (
           
-          <Container fluid>
+          <Container>
     
     <Row>
     
