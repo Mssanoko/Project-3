@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Flashcard  from "../components/Card/Card";
 import DrawButton from "../components/DrawButton/DrawButton";
+import API from "../utils/API";
 
 import Quiz from '../components/Quiz/Quiz'
 
@@ -25,6 +26,13 @@ class Cards extends Component {
 
 componentDidMount(){
    console.log("get flashcard")
+   API.userFlashcards().then( (result)=>{
+    let flashcards = result.data;
+
+    this.setState({cards: flashcards})
+
+    
+   })
   }
 
 
@@ -53,11 +61,12 @@ componentDidMount(){
           <Container fluid>
     
     <Row>
-    <Col size="md-6">
-    <Flashcard></Flashcard>
-    <DrawButton/>
-    </Col>
+    
+   {this.state.cards.map((e,i)=><Flashcard phrase={e.phrase} translation={e.translation} key={i}/>)} 
+   
+  
           </Row>
+         
           </Container> 
           
         //   <div className="Card">
