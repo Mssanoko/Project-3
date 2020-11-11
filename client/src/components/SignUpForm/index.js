@@ -28,7 +28,7 @@ function SignUpForm(props) {
         // .catch(err => {
         //     console.log(err);
         // });
-        API.signUp({ email: emailInput.current.value, password: passwordInput.current.value, name: nameInput.current.value})
+        API.signUp({ email: emailInput.current.value, password: passwordInput.current.value, name: nameInput.current.value })
             .then(data => {
                 // console.log(data);
                 setEmail(data.data.email);
@@ -41,10 +41,10 @@ function SignUpForm(props) {
     }
     return (
         <Fragment>
-            { (() => {
+            {(() => {
                 if (!loggedIn) {
                     return (<form {...extraProps} onSubmit={handleSubmit}>
-                         <div className="form-group">
+                        <div className="form-group">
                             <label htmlFor={nameId}>Name</label>
                             <input ref={nameInput} type="text" className="form-control" id={nameId} />
                         </div>
