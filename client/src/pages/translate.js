@@ -62,12 +62,12 @@ function Translates() {
   };
 
     return (
-      <Container fluid>
+      <Container>
         
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Translate from English to French
+              <h1 className="translate">Translate from English to French
               </h1>
             </Jumbotron>
             <form>
@@ -87,7 +87,7 @@ function Translates() {
         
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1> Flashcard List</h1>
+              <h1 className="translate"> Flashcard List</h1>
             </Jumbotron>
             {translates.length ? (
               <List>

@@ -1,0 +1,40 @@
+p{
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+h4{
+    margin-left: 35px;
+}
+
+h5{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 200px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 50px;
+}
+.row{
+    margin-top: 60px;
+    text-align: center;
+    margin-left: 150px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.quizcontainer{
+    text-align: center;
+}
+
+.fancy-btn{
+    margin-top: 30px;
+    margin-left: 250px;
+    padding: 20px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#submit{
+    margin-right: 150px;
+}
+
+
+
